@@ -3,6 +3,9 @@ pipeline {
     stages {
         stage("Build Maven") {
             steps {
+                echo 'Hello from maven-nodejs slave'
+                sh 'mvn -version'
+                sh 'gradle -version'
                 sh 'mvn -B clean package'
             }
         }
