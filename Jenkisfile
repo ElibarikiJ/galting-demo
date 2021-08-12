@@ -1,6 +1,10 @@
 pipeline {
     agent any
     stages {
+        git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
+        withMaven {
+              sh "mvn clean verify"
+        }
         stage("Build Maven") {
             steps {
                 echo 'Hello from maven-nodejs slave'
