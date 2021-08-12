@@ -10,7 +10,15 @@ pipeline {
                                     mavenSettingsConfig: 'my-maven-settings' // (3)
                                 ) {
                                   sh "mvn clean verify"
+                                  sh "mvn --version"
+                                  sh 'mvn -B clean package'
+                                  sh 'mvn gatling:test'
                             }
+                            post {
+                                            always {
+                                                gatlingArchive()
+                                            }
+                                        }
                 }
               }
         }
