@@ -4,7 +4,6 @@ pipeline {
              stage ('Build') {
                             steps {
                                    sh "pwd"
-                                   sh "which maven"
                                    sh "mvn clean verify"
                                    sh "mvn --version"
                                    sh 'mvn -B clean package'
