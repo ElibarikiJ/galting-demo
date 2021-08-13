@@ -3,7 +3,6 @@ pipeline {
         stages {
              stage ('Build') {
                             steps {
-                                   sh "whoiam"
                                    sh "pwd"
                                    sh "which mvn"
                                    sh "which maven"
