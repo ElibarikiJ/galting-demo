@@ -3,23 +3,15 @@ pipeline {
         stages {
              stage ('Build') {
                             steps {
-                                git url: 'https://github.com/cyrille-leclerc/multi-module-maven-project'
-                                withMaven(
-                                    maven: 'maven-3', // (1)
-                                    mavenLocalRepo: '.repository', // (2)
-                                    mavenSettingsConfig: 'my-maven-settings' // (3)
-                                ) {
-                                  sh "mvn clean verify"
-                                  sh "mvn --version"
-                                  sh 'mvn -B clean package'
-                                  sh 'mvn gatling:test'
-                            }
-                            post {
-                                            always {
-                                                gatlingArchive()
-                                            }
-                                        }
-                }
-              }
+                                   sh "whoiam"
+                                   sh "pwd"
+                                   sh "which mvn"
+                                   sh "which maven"
+                                   sh "mvn clean verify"
+                                   sh "mvn --version"
+                                   sh 'mvn -B clean package'
+                                   sh 'mvn gatling:test'
+                                  }
+                    }
         }
 }
