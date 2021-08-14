@@ -19,10 +19,20 @@
 
   <dependencies>
     <dependency>
+      <groupId>io.gatling</groupId>
+      <artifactId>gatling-app</artifactId>
+      <version>${gatling.version}</version>
+    </dependency>
+    <dependency>
       <groupId>io.gatling.highcharts</groupId>
       <artifactId>gatling-charts-highcharts</artifactId>
       <version>${gatling.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.gatling</groupId>
+      <artifactId>gatling-recorder</artifactId>
+      <version>${gatling.version}</version>
     </dependency>
   </dependencies>
 
@@ -62,6 +72,10 @@
         <groupId>io.gatling</groupId>
         <artifactId>gatling-maven-plugin</artifactId>
         <version>${gatling-maven-plugin.version}</version>
+        <configuration>
+          <simulationsFolder>src/test/scala/computerdatabase</simulationsFolder>
+          <runMultipleSimulations>true</runMultipleSimulations>
+        </configuration>
       </plugin>
     </plugins>
   </build>
