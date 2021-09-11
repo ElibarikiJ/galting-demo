@@ -20,7 +20,7 @@ pipeline {
                          sh 'mvn gatling:test'
                      }
                      post {
-                                     always {
+                                    always {
                                          gatlingArchive()
                                      }
                                  }
