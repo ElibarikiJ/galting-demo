@@ -225,5 +225,5 @@ class RecordedSimulation extends Simulation {
 			.get("/api/regions")
 			.headers(headers_39)))
 
-	setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+	setUp(scn.inject(atOnceUsers(100))).protocols(httpProtocol)
 }
